@@ -1,2 +1,0 @@
-# Amharic-Learning
-Amharic Learning
