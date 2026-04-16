@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 23, 42;
+    --background-end-rgb: 15, 23, 42;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Child-friendly large tap targets */
+.btn-primary {
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-bold py-4 px-8 rounded-2xl transition-all transform hover:scale-105 active:scale-95 shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-accent-blue hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-2xl transition-all transform hover:scale-105 active:scale-95 shadow-lg;
+}
+
+.btn-success {
+  @apply bg-accent-green hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl transition-all transform hover:scale-105 active:scale-95 shadow-lg;
+}
+
+/* Large Amharic letter display */
+.amharic-letter {
+  @apply font-amharic text-6xl md:text-8xl lg:text-9xl font-bold;
+}
+
+/* Card styles for activities */
+.activity-card {
+  @apply bg-white rounded-3xl shadow-xl p-6 md:p-8 border-4 border-primary-200;
+}
+
+/* Progress bar */
+.progress-bar {
+  @apply h-4 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-primary-400 to-primary-500 transition-all duration-500;
+}
+
+/* Streak counter */
+.streak-badge {
+  @apply inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full font-bold;
+}
+
+/* XP badge */
+.xp-badge {
+  @apply inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full font-bold;
+}
+
+/* Lesson node on path */
+.lesson-node {
+  @apply w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center border-4 transition-all;
+}
+
+.lesson-node-completed {
+  @apply bg-accent-green border-green-600 text-white;
+}
+
+.lesson-node-current {
+  @apply bg-primary-500 border-primary-600 text-white animate-pulse;
+}
+
+.lesson-node-locked {
+  @apply bg-gray-300 border-gray-400 text-gray-500;
+}
+
+/* Tracing canvas container */
+.tracing-container {
+  @apply relative bg-white rounded-2xl border-4 border-primary-300 overflow-hidden touch-none;
+}
+
+/* Confetti animation placeholder */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  animation: confetti-fall 3s ease-out forwards;
+}
