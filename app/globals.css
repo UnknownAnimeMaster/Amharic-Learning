@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(157, 220, 251, 0.35), transparent 28%),
+    radial-gradient(circle at top right, rgba(246, 196, 83, 0.3), transparent 20%),
+    linear-gradient(180deg, #fffef9 0%, #f8fbff 100%);
+  color: #2B2D42;
+  font-family: Inter, "Noto Sans Ethiopic", Nyala, sans-serif;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(91, 75, 138, 0.25), transparent 28%),
+    linear-gradient(180deg, #1f2438 0%, #161926 100%);
+  color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ethiopic {
+  font-family: "Noto Sans Ethiopic", Nyala, "Abyssinica SIL", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
